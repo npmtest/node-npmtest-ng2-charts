@@ -1,1 +1,40 @@
-{     "devDependencies": {         "ng2-charts": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-ng2-charts",     "homepage": "https://github.com/npmtest/node-npmtest-ng2-charts",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-ng2-charts.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "test coverage for [ng2-charts (v1.5.0)](https://github.com/valor-software/ng2-charts#readme) [![npm package](https://img.shields.io/npm/v/npmtest-ng2-charts.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-ng2-charts) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-ng2-charts.svg)](https://travis-ci.org/npmtest/node-npmtest-ng2-charts)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "ng2-charts": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-ng2-charts",
+    "keywords": [
+        "coverage",
+        "test",
+        "ng2-charts"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_ng2_charts.js",
+    "name": "npmtest-ng2-charts",
+    "nameAlias": "npmtest_ng2_charts",
+    "nameOriginal": "npmtest-ng2-charts",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-ng2-charts.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
